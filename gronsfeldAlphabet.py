@@ -71,37 +71,30 @@ def gronsfeld_cypher(text, key):
     print("The given key is longer than the given text")
     return 3
 
-  key_list = [] #lists
-  text_list = []
   encrypted_list = []
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
-  for char in no_space_text: #populating text_list
-    text_list.append(char)
 
-  for char in key: #populating key_list
-    key_list.append(int(char))
-
-  for i in range(0,len(text_list)): #iterate as many times as elements in text_list
-
+  for i in range(0,len(text)): #iterate as many times as elements in text_list
     # key index for this given position in encrypted_list will be the
     # module between the current string position and the key length
-    key_index = i % len(key_list)
+    key_index = i % len(key)
     
-    current_letter_index = alphabet.index(text_list[i]) #ascii for the current letter in text_list
+    current_letter_index = alphabet.index(text[i]) #ascii for the current letter in text_list
 
-    current_key = key_list[key_index] #number for the found key index
+    current_key = int(key[key_index]) #number for the found key index
     resulting_letter_pos = current_letter_index + current_key
 
     if(resulting_letter_pos > 25): 
       resulting_letter_pos = resulting_letter_pos - 26
 
     resulting_letter = alphabet[resulting_letter_pos]
-
     encrypted_list.append(resulting_letter)
+
   converted_list = map(str, encrypted_list)
   result = ''.join(converted_list)
-  print(result)
+
+  return result
 
 def gronsfeld_decypher(text, key):
 
@@ -120,51 +113,50 @@ def gronsfeld_decypher(text, key):
     print("The given key is longer than the given text")
     return 3
 
-  key_list = [] #lists
-  text_list = []
   decrypted_list = []
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
-  for char in no_space_text: #populating text_list
-    text_list.append(char)
-
-  for char in key: #populating key_list
-    key_list.append(int(char))
-
-  for i in range(0,len(text_list)): #iterate as many times as elements in text_list
-
+  for i in range(0,len(text)): #iterate as many times as elements in text_list
     # key index for this given position in encrypted_list will be the
     # module between the current string position and the key length
-    key_index = i % len(key_list)
+    key_index = i % len(key)
     
-    current_letter_index = alphabet.index(text_list[i]) #ascii for the current letter in text_list
+    current_letter_index = alphabet.index(text[i]) #ascii for the current letter in text_list
 
-    current_key = key_list[key_index] #number for the found key index
+    current_key = int(key[key_index]) #number for the found key index
     resulting_letter_pos = current_letter_index - current_key
 
     if(resulting_letter_pos < 0): 
       resulting_letter_pos = resulting_letter_pos + 26
 
     resulting_letter = alphabet[resulting_letter_pos]
-
     decrypted_list.append(resulting_letter)
-  
   
   converted_list = map(str, decrypted_list)
   result = ''.join(converted_list)
-  print(result)
+  return result
 
 
-gronsfeld_cypher("HOLA", "123")
-gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","9")
-gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "1")
-gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","0")
-gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","5")
+print(gronsfeld_cypher("HOLA", "123"))
+print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","9"))
+print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "1"))
+print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","0"))
+print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","5"))
 
-gronsfeld_decypher("JKLMNOPQRSTUVWXYZABCDEFGHI","9")
-gronsfeld_decypher("BCDEFGHIJKLMNOPQRSTUVWXYZA","1")
-gronsfeld_decypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","0")
-gronsfeld_decypher("FGHIJKLMNOPQRSTUVWXYZABCDE","5")
+print(gronsfeld_decypher("JKLMNOPQRSTUVWXYZABCDEFGHI","9"))
+print(gronsfeld_decypher("BCDEFGHIJKLMNOPQRSTUVWXYZA","1"))
+print(gronsfeld_decypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","0"))
+print(gronsfeld_decypher("FGHIJKLMNOPQRSTUVWXYZABCDE","5"))
+
+print(gronsfeld_cypher("HOLA", "123"))
+print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","748298829329293829828568748922983229732986978698629782982899"))
+print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ", ""))
+print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","papapa"))
+print(gronsfeld_cypher("ABCDEFGHIJK___LMNO...PQRSTUVWXYZ","5"))
+print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","9"))
+print(gronsfeld_cypher("ho", "1234"))
+print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQ56346RSTUVWXYZ","0hol"))
+print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","5"))
 
 
 
