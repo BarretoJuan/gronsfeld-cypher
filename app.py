@@ -22,7 +22,10 @@ def cypher():
     if(request.method == "POST"):
         message = request.form['message']
         key = request.form['key']
-        encripted_message = gronsfeld_cypher(message, key)
+        try:
+            encripted_message = gronsfeld_cypher(message, key)
+        except:
+            return render_template("cypher.html")
 
         return render_template("cypher.html", value = {
             "message": encripted_message
@@ -37,7 +40,10 @@ def decypher():
     if(request.method == "POST"):
         message = request.form['message']
         key = request.form['key']
-        decrypted_message = gronsfeld_decypher(message, key)
+        try:
+            decrypted_message = gronsfeld_decypher(message, key)
+        except ValueError:
+            return render_template("decypher.html")
 
         return render_template("decypher.html", value = {
             "message": decrypted_message
