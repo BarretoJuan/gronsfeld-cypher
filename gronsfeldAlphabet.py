@@ -75,12 +75,12 @@ def gronsfeld_cypher(text, key):
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
 
-  for i in range(0,len(text)): #iterate as many times as elements in text_list
+  for i in range(0,len(no_space_text)): #iterate as many times as elements in text_list
     # key index for this given position in encrypted_list will be the
     # module between the current string position and the key length
     key_index = i % len(key)
     
-    current_letter_index = alphabet.index(text[i]) #ascii for the current letter in text_list
+    current_letter_index = alphabet.index(no_space_text[i]) #ascii for the current letter in text_list
 
     current_key = int(key[key_index]) #number for the found key index
     resulting_letter_pos = current_letter_index + current_key
@@ -116,12 +116,12 @@ def gronsfeld_decypher(text, key):
   decrypted_list = []
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
-  for i in range(0,len(text)): #iterate as many times as elements in text_list
+  for i in range(0,len(no_space_text)): #iterate as many times as elements in text_list
     # key index for this given position in encrypted_list will be the
     # module between the current string position and the key length
     key_index = i % len(key)
     
-    current_letter_index = alphabet.index(text[i]) #ascii for the current letter in text_list
+    current_letter_index = alphabet.index(no_space_text[i]) #ascii for the current letter in text_list
 
     current_key = int(key[key_index]) #number for the found key index
     resulting_letter_pos = current_letter_index - current_key
