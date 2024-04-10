@@ -59,17 +59,14 @@ def gronsfeld_cypher(text, key):
   if (not key.isdigit()): #if the given key is not a digit, return
     raise ValueError('Entered key is not only numeric')
     
-    
   uppercase_text = text.upper() #convert the given text to uppercase
   no_space_text = uppercase_text.replace(' ','') #and remove all blank spaces
 
   if (not re.match(r"^[A-Z]+$", no_space_text)): #if the given text doesn't contain latin alphabet letters only, return
     raise ValueError('Text to encode doesn\'t only contain latin alphabet letters')
-    
   
   if (len(key) > len(no_space_text)): #if the given key is longer than the given text, return
     raise ValueError("The given key is longer than the given text")
-    
 
   encrypted_list = []
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -133,27 +130,6 @@ def gronsfeld_decypher(text, key):
   result = ''.join(converted_list)
   return result
 
-
-# print(gronsfeld_cypher("HOLA", "123"))
-# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","9"))
-# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "1"))
-# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","0"))
-# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","5"))
-
-# print(gronsfeld_decypher("JKLMNOPQRSTUVWXYZABCDEFGHI","9"))
-# print(gronsfeld_decypher("BCDEFGHIJKLMNOPQRSTUVWXYZA","1"))
-# print(gronsfeld_decypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","0"))
-# print(gronsfeld_decypher("FGHIJKLMNOPQRSTUVWXYZABCDE","5"))
-
-# print(gronsfeld_cypher("HOLA", "123"))
-# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","748298829329293829828568748922983229732986978698629782982899"))
-# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ", ""))
-# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","papapa"))
-# print(gronsfeld_cypher("ABCDEFGHIJK___LMNO...PQRSTUVWXYZ","5"))
-# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","9"))
-# print(gronsfeld_cypher("ho", "1234"))
-# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQ56346RSTUVWXYZ","0hol"))
-# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","5"))
 
 
 
