@@ -18,10 +18,18 @@
     </nav>
 
     <main>
-        <h3>Home text</h3>
-        <p>Cifrar</p>
+        <form action="/cypher" method="post">
+            <div>
+                <input name="message" type="text" placeholder="Your Message">
+            </div>
+            <div>
+                <input name="key" type="number" min="1"  placeholder="Encryption Key">
+            </div>
+            <div>
+                <button name="encrypt" type="submit">Encrypt</button>
+            </div>
+        </form>
     </main>
-    
 </body>
 
 </html>

@@ -12,13 +12,15 @@ def about():
     if(request.method == "GET"):
         return render_template("about.html")
 
-@app.route("/cypher")
+@app.route("/cypher", methods=['POST', 'GET'])
 def cypher():
     if(request.method == "GET"):
         return render_template("cypher.html")
     
     if(request.method == "POST"):
-        print("call cypher function")
+        print(request.form['message'])
+
+        return render_template("cypher.html")
 
 
 @app.route("/decypher")
