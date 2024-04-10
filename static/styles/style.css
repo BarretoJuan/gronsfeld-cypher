@@ -37,3 +37,39 @@ h1 {
     text-align: center;
     float: left;
 }
+
+.form-container {
+    background-color: gray;
+    margin: 20px 0px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.message-container {
+    margin: 10px;
+    text-align: center;
+}
+
+#message-field {
+    width: 90%;
+    height: 30px;
+    border: none;
+    border-radius: 7.5px;
+    padding: 2px 5px;
+}
+
+#key-field {
+    height: 30px;
+    width: 20%;
+    min-width: 150px;
+    border: none;
+    border-radius: 7.5px;
+    padding: 2px 5px;
+}
+
+#cypher-button {
+    height: 30px;
+    width: 10%;
+    min-width: 100px;
+    font-size: large;
+}
