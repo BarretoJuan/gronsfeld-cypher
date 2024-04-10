@@ -134,26 +134,26 @@ def gronsfeld_decypher(text, key):
   return result
 
 
-print(gronsfeld_cypher("HOLA", "123"))
-print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","9"))
-print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "1"))
-print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","0"))
-print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","5"))
+# print(gronsfeld_cypher("HOLA", "123"))
+# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","9"))
+# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "1"))
+# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","0"))
+# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","5"))
 
-print(gronsfeld_decypher("JKLMNOPQRSTUVWXYZABCDEFGHI","9"))
-print(gronsfeld_decypher("BCDEFGHIJKLMNOPQRSTUVWXYZA","1"))
-print(gronsfeld_decypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","0"))
-print(gronsfeld_decypher("FGHIJKLMNOPQRSTUVWXYZABCDE","5"))
+# print(gronsfeld_decypher("JKLMNOPQRSTUVWXYZABCDEFGHI","9"))
+# print(gronsfeld_decypher("BCDEFGHIJKLMNOPQRSTUVWXYZA","1"))
+# print(gronsfeld_decypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","0"))
+# print(gronsfeld_decypher("FGHIJKLMNOPQRSTUVWXYZABCDE","5"))
 
-print(gronsfeld_cypher("HOLA", "123"))
-print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","748298829329293829828568748922983229732986978698629782982899"))
-print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ", ""))
-print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","papapa"))
-print(gronsfeld_cypher("ABCDEFGHIJK___LMNO...PQRSTUVWXYZ","5"))
-print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","9"))
-print(gronsfeld_cypher("ho", "1234"))
-print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQ56346RSTUVWXYZ","0hol"))
-print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","5"))
+# print(gronsfeld_cypher("HOLA", "123"))
+# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","748298829329293829828568748922983229732986978698629782982899"))
+# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ", ""))
+# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","papapa"))
+# print(gronsfeld_cypher("ABCDEFGHIJK___LMNO...PQRSTUVWXYZ","5"))
+# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","9"))
+# print(gronsfeld_cypher("ho", "1234"))
+# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQ56346RSTUVWXYZ","0hol"))
+# print(gronsfeld_cypher("ABCDEFGHIJKLMNOPQRSTUVWXYZ","5"))
 
 
 
