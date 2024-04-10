@@ -59,17 +59,14 @@ def gronsfeld_cypher(text, key):
   if (not key.isdigit()): #if the given key is not a digit, return
     raise ValueError('Entered key is not only numeric')
     
-    
   uppercase_text = text.upper() #convert the given text to uppercase
   no_space_text = uppercase_text.replace(' ','') #and remove all blank spaces
 
   if (not re.match(r"^[A-Z]+$", no_space_text)): #if the given text doesn't contain latin alphabet letters only, return
     raise ValueError('Text to encode doesn\'t only contain latin alphabet letters')
-    
   
   if (len(key) > len(no_space_text)): #if the given key is longer than the given text, return
     raise ValueError("The given key is longer than the given text")
-    
 
   encrypted_list = []
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
