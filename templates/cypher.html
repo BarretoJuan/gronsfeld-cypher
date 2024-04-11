@@ -17,24 +17,26 @@
         </nav>
 
         <main class="form-wrapper">
-            <form class="form-container" action="/cypher" method="post">
-                <div>
-                    <div class="message-container">
-                        <textarea id="message-field" name="message" type="text" placeholder="Mensaje a encriptar"></textarea>
+            <form class="form-center"  action="/cypher" method="post">
+                <div class="form-container">
+                    <div>
+                        <div class="message-container">
+                            <textarea id="message-field" name="message" type="text" placeholder="Mensaje a encriptar"></textarea>
+                        </div>
+                        
+                        <input id="key-field" name="key" type="number" min="1" placeholder="Llave">
+                        <button id="cypher-button" name="cypher" type="submit">Cypher</button> 
                     </div>
-                    
-                    <input id="key-field" name="key" type="number" min="1" placeholder="Llave">
-                    <button id="cypher-button" name="cypher" type="submit">Cypher</button> 
-                </div>
-                <div>
-                    <div class="message-container">
-                        <p id="encrypted-message-field">
-                            {% if value %}
-                                {{ value.message }}
-                            {% else %}
-                                Su mensaje encriptado ira aqui
-                            {% endif %}
-                        </p>
+                    <div>
+                        <div class="message-container">
+                            <p id="encrypted-message-field">
+                                {% if value %}
+                                    {{ value.message }}
+                                {% else %}
+                                    Su mensaje encriptado ira aqui
+                                {% endif %}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </form>
