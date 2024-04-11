@@ -18,6 +18,27 @@ h1 {
     color: #FFB703;
 }
 
+p {
+    font-size: 20px;
+    color: white;
+}
+
+img {
+    min-width: 400px;
+    max-width: 800px;
+}
+
+.img-container {
+    text-align: center;
+}
+
+.about-main {
+    margin: 50px;
+    padding: 25px;
+    background-color: #2B90A8;
+    border-radius: 20px;
+}
+
 .navbar ul {
     list-style-type: none;
     background-color: #2B90A8;

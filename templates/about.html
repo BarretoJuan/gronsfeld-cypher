@@ -1,45 +1,48 @@
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <title>Gronsfeld - Acerca De</title>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>Gronsfeld - Acerca De</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
 
-</head>
+    </head>
 
-<body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="/about">Acerca De</a></li>
-            <li><a href="/cypher">Cifrar</a></li>
-            <li><a href="/decypher">Descifrar</a></li>
-        </ul>
-    </nav>
+    <body>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/about">Acerca De</a></li>
+                <li><a href="/cypher">Cifrar</a></li>
+                <li><a href="/decypher">Descifrar</a></li>
+            </ul>
+        </nav>
 
-    <main>
-        <h1>Cifrado Gronsfeld</h1>
-        <p>El cifrado gronsfeld es un cifrado de sustitución polialfabética, se utiliza una clave enteramente numérica para cifrar un determinado texto, se asignará de manera iterativa un dígito de la clave a cada letra del texto a cifrar. Por ejemplo:</p>
-        <img src="{{url_for('static',filename='img/gronsfeldExample2.png')}}" >
+        <main class="about-main">
+            <h1>Cifrado Gronsfeld</h1>
+            <p>El cifrado gronsfeld es un cifrado de sustitución polialfabética, se utiliza una clave enteramente numérica para cifrar un determinado texto, se asignará de manera iterativa un dígito de la clave a cada letra del texto a cifrar. Por ejemplo:</p>
+            <div class="img-container">
+                <img src="{{url_for('static',filename='img/gronsfeldExample2.png')}}" >
+            </div>
 
-        <p>Cada número asignado a cada letra indicará el número de posiciones en el alfabeto que se desplazará una determinada letra. Tal que H se desplazará una posición y pasará a ser I, O se desplazará dos posiciones y pasará a ser Q, y así sucesivamente.</p>
-        <p>Si el número de posiciones a desplazar va más allá del final del alfabeto, este se reiniciará. De modo que, si se tiene una letra Z, y su clave es 2, se desplazará dos posiciones, reiniciando el alfabeto, y posicionándose en B.</p>
-        
-        <h1>Método Aplicado</h1>
-        <p>Para programar este cifrado en nuestro proyecto, se utilizó el lenguaje de programación Python, se desarrolló una función que recibiera como parámetros el texto a cifrar, y la clave de cifrado.</p>
-        <p>Antes de proceder con el algoritmo de cifrado, fue necesario la validación de las entradas, de forma que se verificara que la clave ingresada fuera únicamente numérica. El texto ingresado sería llevado a mayúsculas, y se eliminaron los espacios en blanco. Luego se verifica que el texto contenga únicamente letras del alfabeto latino. Y finalmente se verifica que la clave no tenga más caracteres que el texto.</p>
-        <img src="{{url_for('static',filename='img/gronsfeldValidations.png')}}">
-
-        <p>Teniendo verificados los datos, se crea una lista para guardar en ella los caracteres cifrados, y una lista con las letras del alfabeto, esta se utilizará para hacer referencia a las posiciones de las letras y el número de posiciones a desplazar.</p>
-        <p>Se inicia con un bucle for, el cual se iterará tantas veces como elementos tenga el texto a encriptar</p>
-        <p>Se asigna un índice de la clave a cada elemento utilizando la expresión: índice_clave = i (posición actual del elemento del texto en el bucle for) % longitud_de_la_clave. De esta manera se podrán iterar las posiciones de la clave según sea necesario.</p>
-        <p>Se halla la posición en el alfabeto de la letra actual, haciendo referencia al índice de la letra actual en la lista del alfabeto, y se halla la clave actual haciendo referencia al índice de la clave en el string de clave.</p>
-        <p>Se calcula la posición de la letra encriptada sumando el índice de la letra actual al número de la clave actual, en el caso de que la posición sea mayor a 25 (última posición del alfabeto en la lista), se le resta 26 a la posición resultante, de manera que se pueda volver a comenzar el alfabeto.</p>
-        <p>Finalmente, se utiliza la posición de la letra encriptada para hallar la letra encriptada en el alfabeto. Y se añade la letra a la lista del texto encriptado. Y se retorna el contenido encriptado.</p>
-        <img src="{{url_for('static',filename='img/gronsfeld.png')}}">
-
-    </main>
-    
-</body>
+            <p>Cada número asignado a cada letra indicará el número de posiciones en el alfabeto que se desplazará una determinada letra. Tal que H se desplazará una posición y pasará a ser I, O se desplazará dos posiciones y pasará a ser Q, y así sucesivamente.</p>
+            <p>Si el número de posiciones a desplazar va más allá del final del alfabeto, este se reiniciará. De modo que, si se tiene una letra Z, y su clave es 2, se desplazará dos posiciones, reiniciando el alfabeto, y posicionándose en B.</p>
+            
+            <h1>Método Aplicado</h1>
+            <p>Para programar este cifrado en nuestro proyecto, se utilizó el lenguaje de programación Python, se desarrolló una función que recibiera como parámetros el texto a cifrar, y la clave de cifrado.</p>
+            <p>Antes de proceder con el algoritmo de cifrado, fue necesario la validación de las entradas, de forma que se verificara que la clave ingresada fuera únicamente numérica. El texto ingresado sería llevado a mayúsculas, y se eliminaron los espacios en blanco. Luego se verifica que el texto contenga únicamente letras del alfabeto latino. Y finalmente se verifica que la clave no tenga más caracteres que el texto.</p>
+            <div class="img-container">
+                <img src="{{url_for('static',filename='img/gronsfeldValidations.png')}}">
+            </div>
+            <p>Teniendo verificados los datos, se crea una lista para guardar en ella los caracteres cifrados, y una lista con las letras del alfabeto, esta se utilizará para hacer referencia a las posiciones de las letras y el número de posiciones a desplazar.</p>
+            <p>Se inicia con un bucle for, el cual se iterará tantas veces como elementos tenga el texto a encriptar</p>
+            <p>Se asigna un índice de la clave a cada elemento utilizando la expresión: índice_clave = i (posición actual del elemento del texto en el bucle for) % longitud_de_la_clave. De esta manera se podrán iterar las posiciones de la clave según sea necesario.</p>
+            <p>Se halla la posición en el alfabeto de la letra actual, haciendo referencia al índice de la letra actual en la lista del alfabeto, y se halla la clave actual haciendo referencia al índice de la clave en el string de clave.</p>
+            <p>Se calcula la posición de la letra encriptada sumando el índice de la letra actual al número de la clave actual, en el caso de que la posición sea mayor a 25 (última posición del alfabeto en la lista), se le resta 26 a la posición resultante, de manera que se pueda volver a comenzar el alfabeto.</p>
+            <p>Finalmente, se utiliza la posición de la letra encriptada para hallar la letra encriptada en el alfabeto. Y se añade la letra a la lista del texto encriptado. Y se retorna el contenido encriptado.</p>
+            <div class="img-container">
+                <img src="{{url_for('static',filename='img/gronsfeld.png')}}">
+            </div>
+        </main>
+    </body>
 
 </html>
