@@ -35,19 +35,16 @@
                             <input id="key-field" name="key" type="number" min="1" placeholder="Llave">
                             <button id="cypher-button" name="cypher" type="submit">Cifrar</button> 
                         </div>
-                        
-                        <input id="key-field" name="key" type="number" min="1" placeholder="Llave">
-                        <button id="cypher-button" name="cypher" type="submit">Cypher</button> 
-                    </div>
-                    <div>
-                        <div class="message-container">
-                            <p id="encrypted-message-field">
-                                {% if value %}
-                                    {{ value.message }}
-                                {% else %}
-                                    Su mensaje encriptado se mostrará aquí
-                                {% endif %}
-                            </p>
+                        <div>
+                            <div class="message-container">
+                                <p id="encrypted-message-field">
+                                    {% if value %}
+                                        {{ value.message }}
+                                    {% else %}
+                                        Su mensaje encriptado ira aqui
+                                    {% endif %}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
