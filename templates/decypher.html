@@ -40,7 +40,11 @@
                             <div class="message-container">
                                 <p id="decrypted-message-field">
                                     {% if value %}
-                                        {{ value.message }}
+                                        {% if value.message %}
+                                            {{ value.message }}
+                                        {% else %}
+                                            Su mensaje descifrado ira aqui
+                                        {% endif %}
                                     {% else %}
                                         Su mensaje descifrado ira aqui
                                     {% endif %}
