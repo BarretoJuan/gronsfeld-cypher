@@ -17,9 +17,29 @@
             </ul>
         </nav>
 
-        <main>
-            <!--GIANELLA-->
+        <main class="form-wrapper">
+            <form class="form-center" action="/decypher" method="post">
+                <div class="form-container">
+                    <div>
+                        <div class="message-container">
+                            <textarea id="message-field" name="message" type="text" placeholder="Mensaje a descifrar"></textarea>
+                        </div>
+                        <input id="key-field" name="key" type="number" min="1" placeholder="Llave">
+                        <button id="decypher-button" name="decypher" type="submit">Decypher</button> 
+                    </div>
+                    <div>
+                        <div class="message-container">
+                            <p id="decrypted-message-field">
+                                {% if value %}
+                                    {{ value.message }}
+                                {% else %}
+                                    Su mensaje descifrado ira aqui
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>        
         </main>
     </body>
-
 </html>
