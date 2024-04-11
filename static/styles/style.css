@@ -18,6 +18,10 @@ h1 {
     color: #FFB703;
 }
 
+p {
+    text-size: 20px;
+}
+
 .navbar ul {
     list-style-type: none;
     background-color: #2B90A8;
