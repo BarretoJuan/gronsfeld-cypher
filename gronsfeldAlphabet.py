@@ -129,8 +129,3 @@ def gronsfeld_decypher(text, key):
   converted_list = map(str, decrypted_list)
   result = ''.join(converted_list)
   return result
-
-
-
-
-

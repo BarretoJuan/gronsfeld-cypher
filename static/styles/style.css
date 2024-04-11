@@ -5,6 +5,8 @@ main {
 
 body{
     margin: 0px;
+    background-color: #023047;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -13,7 +15,7 @@ h1 {
 
 .navbar ul {
     list-style-type: none;
-    background-color: green;
+    background-color: #2B90A8;
     padding: 0px;
     margin: 0px;
     overflow: hidden;
@@ -21,7 +23,8 @@ h1 {
 }
 
 .navbar a{
-    color: white;
+    color: #FFB703;
+    font-size: 30px;
     text-decoration: none;
     padding: 15px;
     display: block;
@@ -30,7 +33,7 @@ h1 {
 }
 
 .navbar a:hover{
-    background-color: lightgreen;
+    background-color: #2cadcd;
 }
 
 .navbar li {
@@ -40,6 +43,8 @@ h1 {
 
 .form-wrapper {
     height: 90vh;
+    margin-left: 0px;
+    margin-right: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +56,7 @@ h1 {
     width: 80%;
     height: 70%;
     text-align: center;
-    background-color: gray;
+    background-color: #2B90A8;
     margin: 20px 0px;
     padding: 10px;
     border-radius: 10px;
@@ -65,23 +70,48 @@ h1 {
 #message-field, #encrypted-message-field {
     width: 100%;
     height: 300px;
-    border: none;
-    border-radius: 7.5px;
     padding: 2px 5px;
+
+    border: solid 10px #023047;
+    border-radius: 12.5px;
+}
+
+#message-field {
+    background-color: #8ECAE6;
+    font-size: 30px;
+    resize: none;
+}
+
+#encrypted-message-field {
+    width: 95%;
+    color: #FFB703;
+    font-size: 30px;
 }
 
 #key-field {
-    height: 30px;
+    height: 50px;
     width: 20%;
     min-width: 150px;
-    border: none;
-    border-radius: 7.5px;
     padding: 2px 5px;
+
+    color: #FFB703;
+    font-size: 30px;
+
+    border-width: 0px 0px 5px 0px;
+    border-color: #023047;
+    background-color: transparent;
 }
 
+
 #cypher-button {
-    height: 30px;
-    width: 10%;
+    height: 50px;
+    width: 20%;
     min-width: 100px;
-    font-size: large;
+
+    font-size: 30px;
+    color: #023047;
+    
+    background-color: #FFB703;
+    border: none;
+    border-radius: 5px;
 }
