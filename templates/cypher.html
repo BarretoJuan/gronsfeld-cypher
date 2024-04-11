@@ -30,7 +30,7 @@
                     <div class="form-container">
                         <div>
                             <div class="message-container">
-                                <textarea id="message-field" name="message" type="text" placeholder="Mensaje a encriptar"></textarea>
+                                <textarea id="message-field" name="message" type="text" placeholder="Mensaje a cifrar"></textarea>
                             </div>
                             <input id="key-field" name="key" type="number" min="1" placeholder="Llave">
                             <button id="cypher-button" name="cypher" type="submit">Cifrar</button> 
@@ -42,10 +42,10 @@
                                         {% if value.message %}
                                             {{ value.message }}
                                         {% else %}
-                                            Su mensaje encriptado se mostrará aquí
+                                            Su mensaje cifrado se mostrará aquí
                                         {% endif %}
                                     {% else %}
-                                        Su mensaje encriptado se mostrará aquí
+                                        Su mensaje cifrado se mostrará aquí
                                     {% endif %}
                                 </p>
                             </div>
