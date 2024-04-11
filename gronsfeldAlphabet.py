@@ -57,16 +57,28 @@ import re
 def gronsfeld_cypher(text, key):
 
   if (not key.isdigit()): #if the given key is not a digit, return
-    raise ValueError('Entered key is not only numeric')
+    raise ValueError('La llave ingresada no es numérica')
+
+  if(int(key)<0):
+    raise ValueError("La llave ingresada no puede ser negativa")
+
+  if(len(text)==0 and len(key)==0):
+    raise ValueError("Llene los campos de texto y llave")
+
+  if(len(key) ==0 ):
+    raise ValueError("La llave no puede estar vacía")
+
+  if(len(text)==0 ):
+    raise ValueError("El texto a cifrar no puede estar vacío")
     
   uppercase_text = text.upper() #convert the given text to uppercase
   no_space_text = uppercase_text.replace(' ','') #and remove all blank spaces
 
   if (not re.match(r"^[A-Z]+$", no_space_text)): #if the given text doesn't contain latin alphabet letters only, return
-    raise ValueError('Text to encode doesn\'t only contain latin alphabet letters')
+    raise ValueError('El texto a cifrar no está compuesto únicamente por letras')
   
   if (len(key) > len(no_space_text)): #if the given key is longer than the given text, return
-    raise ValueError("The given key is longer than the given text")
+    raise ValueError("La llave ingresada es más larga que el texto a cifrar")
 
   encrypted_list = []
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -95,16 +107,28 @@ def gronsfeld_cypher(text, key):
 def gronsfeld_decypher(text, key):
 
   if (not key.isdigit()): #if the given key is not a digit, return
-    raise ValueError('Entered key is not only numeric')
+    raise ValueError('La llave ingresada no es numérica')
+
+  if(int(key)<0):
+    raise ValueError("La llave ingresada no puede ser negativa")
+
+  if(len(text)==0 and len(key)==0):
+    raise ValueError("Llene los campos de texto y llave")
+
+  if(len(key) ==0 ):
+    raise ValueError("La llave no puede estar vacía")
+
+  if(len(text)==0 ):
+    raise ValueError("El texto a descifrar no puede estar vacío")
     
   uppercase_text = text.upper() #convert the given text to uppercase
   no_space_text = uppercase_text.replace(' ','') #and remove all blank spaces
 
   if (not re.match(r"^[A-Z]+$", no_space_text)): #if the given text doesn't contain latin alphabet letters only, return
-    raise ValueError('Text to decode doesn\'t only contain latin alphabet letters')
+    raise ValueError('El texto a cifrar no está compuesto únicamente por letras')
   
   if (len(key) > len(no_space_text)): #if the given key is longer than the given text, return
-    raise ValueError("The given key is longer than the given text")
+    raise ValueError("La llave ingresada es más larga que el texto a descifrar")
 
   decrypted_list = []
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
