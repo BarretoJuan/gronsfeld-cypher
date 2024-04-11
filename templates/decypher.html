@@ -34,7 +34,7 @@
                                 <textarea id="message-field" name="message" type="text" placeholder="Mensaje a descifrar"></textarea>
                             </div>
                             <input id="key-field" name="key" type="number" min="1" placeholder="Llave">
-                            <button id="decypher-button" name="decypher" type="submit">Decypher</button> 
+                            <button id="decypher-button" name="decypher" type="submit">Descifrar</button> 
                         </div>
                         <div>
                             <div class="message-container">
@@ -43,10 +43,10 @@
                                         {% if value.message %}
                                             {{ value.message }}
                                         {% else %}
-                                            Su mensaje descifrado ira aqui
+                                            Su mensaje encriptado se mostrará aquí
                                         {% endif %}
                                     {% else %}
-                                        Su mensaje descifrado ira aqui
+                                        Su mensaje encriptado se mostrará aquí
                                     {% endif %}
                                 </p>
                             </div>
