@@ -100,6 +100,7 @@ h1 {
     min-width: 150px;
     padding: 2px 5px;
 
+
     color: #FFB703;
     font-size: 30px;
 
@@ -107,6 +108,17 @@ h1 {
     border-color: #023047;
     background-color: transparent;
 }
+
+#key-field::placeholder {
+    color:azure;
+    opacity: 1;
+}
+
+#message-container::placeholder {
+    color:#023047;
+    opacity: 1;
+}
+
 
 
 #cypher-button {
