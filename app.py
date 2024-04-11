@@ -24,8 +24,10 @@ def cypher():
         key = request.form['key']
         try:
             encripted_message = gronsfeld_cypher(message, key)
-        except:
-            return render_template("cypher.html")
+        except ValueError as error:
+            return render_template("cypher.html", value={
+                "error": error
+            })
 
         return render_template("cypher.html", value = {
             "message": encripted_message
@@ -42,8 +44,10 @@ def decypher():
         key = request.form['key']
         try:
             decrypted_message = gronsfeld_decypher(message, key)
-        except ValueError:
-            return render_template("decypher.html")
+        except ValueError as error:
+            return render_template("decypher.html", value={
+                "error": error
+            })
 
         return render_template("decypher.html", value = {
             "message": decrypted_message
