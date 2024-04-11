@@ -90,7 +90,6 @@ def gronsfeld_cypher(text, key):
 
   converted_list = map(str, encrypted_list)
   result = ''.join(converted_list)
-
   return result
 
 def gronsfeld_decypher(text, key):
