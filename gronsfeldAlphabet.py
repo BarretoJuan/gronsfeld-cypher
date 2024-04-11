@@ -56,11 +56,6 @@
 import re 
 def gronsfeld_cypher(text, key):
 
-  if (not key.isdigit()): #if the given key is not a digit, return
-    raise ValueError('La llave ingresada no es numérica')
-
-  if(int(key)<0):
-    raise ValueError("La llave ingresada no puede ser negativa")
 
   if(len(text)==0 and len(key)==0):
     raise ValueError("Llene los campos de texto y llave")
@@ -70,6 +65,12 @@ def gronsfeld_cypher(text, key):
 
   if(len(text)==0 ):
     raise ValueError("El texto a cifrar no puede estar vacío")
+  
+  if (not key.isdigit()): #if the given key is not a digit, return
+    raise ValueError('La llave ingresada no es numérica')
+
+  if(int(key)<0):
+    raise ValueError("La llave ingresada no puede ser negativa")
     
   uppercase_text = text.upper() #convert the given text to uppercase
   no_space_text = uppercase_text.replace(' ','') #and remove all blank spaces
@@ -106,11 +107,7 @@ def gronsfeld_cypher(text, key):
 
 def gronsfeld_decypher(text, key):
 
-  if (not key.isdigit()): #if the given key is not a digit, return
-    raise ValueError('La llave ingresada no es numérica')
 
-  if(int(key)<0):
-    raise ValueError("La llave ingresada no puede ser negativa")
 
   if(len(text)==0 and len(key)==0):
     raise ValueError("Llene los campos de texto y llave")
@@ -120,6 +117,12 @@ def gronsfeld_decypher(text, key):
 
   if(len(text)==0 ):
     raise ValueError("El texto a descifrar no puede estar vacío")
+  
+  if (not key.isdigit()): #if the given key is not a digit, return
+    raise ValueError('La llave ingresada no es numérica')
+
+  if(int(key)<0):
+    raise ValueError("La llave ingresada no puede ser negativa")
     
   uppercase_text = text.upper() #convert the given text to uppercase
   no_space_text = uppercase_text.replace(' ','') #and remove all blank spaces
